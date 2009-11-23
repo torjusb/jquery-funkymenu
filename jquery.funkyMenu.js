@@ -25,7 +25,7 @@
 					$tempActive = $lists.filter('.tempActive'),
 					doSlide = $tempActive.length;
 				
-				$easer.animate({
+				$easer.stop().animate({
 					width: parseInt($this.outerWidth()),
 					left: parseInt($this.offset().left) - parseInt($nav.offset().left)
 				});

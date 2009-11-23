@@ -94,7 +94,7 @@ body {
 					display: block;
 					text-decoration: none;
 				}
-				#nav > li.tempActive a, #nav > li a.current { color: #fff; }
+				#nav > li.tempActive a, #nav > li a.current, #nav li.childless-tempActive a { color: #fff; }
 								
 				#nav > li.tempActive ul { display: block!important; }
 				#nav > li ul {

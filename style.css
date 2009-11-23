@@ -104,8 +104,10 @@ body {
 					background: #2e2e2e;
 					width: 100%;
 					z-index: 9999;
+					padding-left: 150px;
+					height: 24px;
 				}
-					#nav ul > li:first-of-type { margin-left: 150px; }
+
 					#nav ul > li {
 						float: left;
 						position: relative;

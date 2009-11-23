@@ -28,9 +28,10 @@
 				$easer.stop().animate({
 					width: parseInt($this.outerWidth()),
 					left: parseInt($this.offset().left) - parseInt($nav.offset().left)
+				}, 250, 'linear', function () {
+					$this.addClass('current');
 				});
 				
-				$this.addClass('current');
 				
 				if (!$this.parent().hasClass('tempActive')) {
 					if (doSlide > 0) {

@@ -4,8 +4,9 @@
 			var $nav = $(this),
 				$lists = $nav.children('li'),
 				$anchors = $nav.find('> li a'),
-				$subAnchors = $lists.find('li');
-				
+				$subAnchors = $lists.find('li'),
+				$subHovers = $subAnchors.children('span');
+			
 			$nav.after('<span id="bg-easer" />');
 			var $easer = $('#bg-easer');
 			$easer.css({
@@ -25,13 +26,14 @@
 					$tempActive = $lists.filter('.tempActive'),
 					doSlide = $tempActive.length;
 				
+				$subHovers.hide();
+				
 				$easer.stop().animate({
 					width: parseInt($this.outerWidth()),
 					left: parseInt($this.offset().left) - parseInt($nav.offset().left)
 				}, 250, 'linear', function () {
 					$this.addClass('current');
 				});
-				
 				
 				if (!$this.parent().hasClass('tempActive')) {
 					if (doSlide > 0) {

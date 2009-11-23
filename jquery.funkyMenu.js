@@ -25,16 +25,19 @@
 					$sub = $this.siblings('ul:first'),
 					$tempActive = $lists.filter('.tempActive'),
 					doSlide = $tempActive.length;
+									
 				
 				$subHovers.hide();
-				
+								
 				$easer.stop().animate({
 					width: parseInt($this.outerWidth()),
 					left: parseInt($this.offset().left) - parseInt($nav.offset().left)
-				}, 250, 'linear', function () {
-					$this.addClass('current');
-				});
+				}, 250, 'linear');
 				
+				$this.addClass('current');
+				
+				console.log($this.parent());
+					
 				if (!$this.parent().hasClass('tempActive')) {
 					if (doSlide > 0) {
 						$lists.filter('.tempActive').children('ul').slideUp('fast', function () {
@@ -43,8 +46,9 @@
 					} else {
 						$sub.slideDown('fast');
 					}
+					$lists.removeClass('tempActive');
 				}
-				$lists.removeClass('tempActive');
+				
 			}, function () {
 				if ($(this).siblings('ul').length > 0) {
 					$(this).parent().addClass('tempActive');

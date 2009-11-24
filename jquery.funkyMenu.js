@@ -8,11 +8,15 @@
 				$subHovers = $subAnchors.children('span');
 				
 			$nav.after('<span id="bg-easer" />');
-			var $easer = $('#bg-easer');
-			$easer.css({
-				width : parseInt($lists.filter(':first').width()),
-				left : parseInt($lists.filter(':first').css('margin-left'))
-			});
+			var $easer = $('#bg-easer');			
+			if ($lists.filter('.tempActive').length > 0) {
+				$easer.animate({
+					width : parseInt($lists.filter('.tempActive').width()),
+					left : parseInt($lists.filter('.tempActive').offset().left) - parseInt($nav.offset().left)
+				}, 500, 'linear', function () {
+					$lists.filter('.tempActive').children('ul').slideDown('fast');
+				});
+			}
 			
 			$subAnchors.hover( function () {
 				$(this).children('span').fadeIn();
@@ -25,9 +29,7 @@
 					$sub = $this.siblings('ul:first'),
 					$tempActive = $lists.filter('.tempActive'),
 					doSlide = $tempActive.length;
-				
-				
-								
+					
 				$this.addClass('current');
 				$lists.removeClass('childless-tempActive');
 				$subHovers.hide();

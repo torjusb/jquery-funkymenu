@@ -96,7 +96,7 @@ body {
 				}
 				#nav > li.tempActive a, #nav > li a.current, #nav li.childless-tempActive a { color: #fff; }
 								
-				#nav > li.tempActive ul { display: block!important; }
+				#nav > li.tempActive ul { display: none; }
 				#nav > li ul {
 					display: none;
 					position: absolute;

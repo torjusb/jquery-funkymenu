@@ -19,6 +19,9 @@
 			}
 			
 			$subAnchors.hover( function () {
+				$subAnchors.filter('.active').children('span').fadeOut('slow', function () {
+					$(this).parent().removeClass('active');
+				});
 				$(this).children('span').fadeIn();
 			}, function () {
 				$(this).children('span').fadeOut();

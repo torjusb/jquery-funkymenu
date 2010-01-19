@@ -5,6 +5,7 @@
 				$lists = $nav.children('li'),
 				$anchors = $nav.find('> li a'),
 				$subAnchors = $lists.find('li'),
+				$subNavs = $('ul', $lists),
 				$subHovers = $subAnchors.children('span');
 				
 			$nav.after('<span id="bg-easer" />');
@@ -44,6 +45,7 @@
 				
 				if (!$this.parent().hasClass('tempActive')) {
 					if (doSlide > 0) {
+						$subNavs.stop(true, true);
 						$lists.filter('.tempActive').children('ul').slideUp('fast', function () {
 							$sub.slideDown('fast');
 						});
